@@ -1,0 +1,1459 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Panelbeater::Whm::Commands - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/panelbeater/whm/commands.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="../Model.html">Panelbeater::Model</a>
+  
+  
+  
+    <li><a class="include" href="../Remote.html">Panelbeater::Remote</a>
+  
+  
+  
+    <li><a class="include" href="../Cpanel.html">Panelbeater::Cpanel</a>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-accountsummary">#accountsummary</a>
+    
+    <li><a href="#method-i-addpkg">#addpkg</a>
+    
+    <li><a href="#method-i-applist">#applist</a>
+    
+    <li><a href="#method-i-changepackage">#changepackage</a>
+    
+    <li><a href="#method-i-cpanel">#cpanel</a>
+    
+    <li><a href="#method-i-createacct">#createacct</a>
+    
+    <li><a href="#method-i-editpkg">#editpkg</a>
+    
+    <li><a href="#method-i-fetchsslinfo">#fetchsslinfo</a>
+    
+    <li><a href="#method-i-generatessl">#generatessl</a>
+    
+    <li><a href="#method-i-gethostname">#gethostname</a>
+    
+    <li><a href="#method-i-getlanglist">#getlanglist</a>
+    
+    <li><a href="#method-i-killpkg">#killpkg</a>
+    
+    <li><a href="#method-i-listaccts">#listaccts</a>
+    
+    <li><a href="#method-i-listacls">#listacls</a>
+    
+    <li><a href="#method-i-listcrts">#listcrts</a>
+    
+    <li><a href="#method-i-listpkgs">#listpkgs</a>
+    
+    <li><a href="#method-i-listresellers">#listresellers</a>
+    
+    <li><a href="#method-i-listsubdomains">#listsubdomains</a>
+    
+    <li><a href="#method-i-listsuspended">#listsuspended</a>
+    
+    <li><a href="#method-i-loadavg">#loadavg</a>
+    
+    <li><a href="#method-i-passwd">#passwd</a>
+    
+    <li><a href="#method-i-reboot">#reboot</a>
+    
+    <li><a href="#method-i-removeacct">#removeacct</a>
+    
+    <li><a href="#method-i-resellerstats">#resellerstats</a>
+    
+    <li><a href="#method-i-restartservice">#restartservice</a>
+    
+    <li><a href="#method-i-saveacllist">#saveacllist</a>
+    
+    <li><a href="#method-i-setacls">#setacls</a>
+    
+    <li><a href="#method-i-setupreseller">#setupreseller</a>
+    
+    <li><a href="#method-i-showbw">#showbw</a>
+    
+    <li><a href="#method-i-suspendacct">#suspendacct</a>
+    
+    <li><a href="#method-i-terminatereseller">#terminatereseller</a>
+    
+    <li><a href="#method-i-unsetupreseller">#unsetupreseller</a>
+    
+    <li><a href="#method-i-unsuspendacct">#unsuspendacct</a>
+    
+    <li><a href="#method-i-version">#version</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../Panelbeater.html">Panelbeater</a>
+  
+    <li><a href="../../Panelbeater/Cpanel.html">Panelbeater::Cpanel</a>
+  
+    <li><a href="../../Panelbeater/Cpanel/Commands.html">Panelbeater::Cpanel::Commands</a>
+  
+    <li><a href="../../Panelbeater/FixtureHelper.html">Panelbeater::FixtureHelper</a>
+  
+    <li><a href="../../Panelbeater/Model.html">Panelbeater::Model</a>
+  
+    <li><a href="../../Panelbeater/Remote.html">Panelbeater::Remote</a>
+  
+    <li><a href="../../Panelbeater/Response.html">Panelbeater::Response</a>
+  
+    <li><a href="../../Panelbeater/Whm.html">Panelbeater::Whm</a>
+  
+    <li><a href="../../Panelbeater/Whm/Commands.html">Panelbeater::Whm::Commands</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Panelbeater::Whm::Commands</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-api_key" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">api_key</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-base_url" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">base_url</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-port" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">port</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-user" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">user</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/panelbeater/whm/commands.rb, line 13</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">options</span>={})
+  <span class="ruby-ivar">@log</span> = <span class="ruby-constant">Logger</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">STDOUT</span>)
+  <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">level</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">INFO</span>
+  <span class="ruby-identifier">set_server</span>(<span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-accountsummary" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">accountsummary</span><span
+            class="method-args">(user)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get a users account summary</p>
+          
+
+          
+          <div class="method-source-code" id="accountsummary-source">
+            <pre><span class="ruby-comment"># File lib/panelbeater/whm/commands.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">accountsummary</span>(<span class="ruby-identifier">user</span>)
+  <span class="ruby-identifier">do_request</span> <span class="ruby-string">'accountsummary'</span>, {<span class="ruby-value">:user</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">user</span>}
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- accountsummary-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- accountsummary-method -->
+
+    
+      <div id="method-i-addpkg" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">addpkg</span><span
+            class="method-args">(options={}, mappings=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Add a new package</p>
+
+<p>required params: name quota maxftp maxsql maxpop maxlists maxsub maxpark
+maxaddon bwlimit</p>
+          
+
+          
+          <div class="method-source-code" id="addpkg-source">
+            <pre><span class="ruby-comment"># File lib/panelbeater/whm/commands.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">addpkg</span>(<span class="ruby-identifier">options</span>={}, <span class="ruby-identifier">mappings</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">default_options</span> = { <span class="ruby-value">:featurelist</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'default'</span>,
+                      <span class="ruby-value">:ip</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>,
+                      <span class="ruby-value">:cgi</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>,
+                      <span class="ruby-value">:frontpage</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>,
+                      <span class="ruby-value">:cpmod</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'x3'</span>,
+                      <span class="ruby-value">:hasshell</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span> }
+  <span class="ruby-identifier">all_options</span> = <span class="ruby-identifier">default_options</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">do_request</span> <span class="ruby-string">'addpkg'</span>, <span class="ruby-identifier">all_options</span>, <span class="ruby-identifier">mappings</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- addpkg-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- addpkg-method -->
+
+    
+      <div id="method-i-applist" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">applist</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a list of available commands</p>
+          
+
+          
+          <div class="method-source-code" id="applist-source">
+            <pre><span class="ruby-comment"># File lib/panelbeater/whm/commands.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">applist</span>
+  <span class="ruby-identifier">do_request</span> <span class="ruby-string">'applist'</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- applist-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- applist-method -->
+
+    
+      <div id="method-i-changepackage" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">changepackage</span><span
+            class="method-args">(user, package)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Change a users package</p>
+          
+
+          
+          <div class="method-source-code" id="changepackage-source">
+            <pre><span class="ruby-comment"># File lib/panelbeater/whm/commands.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">changepackage</span>(<span class="ruby-identifier">user</span>, <span class="ruby-identifier">package</span>)
+  <span class="ruby-identifier">do_request</span> <span class="ruby-string">'changepackage'</span>, {<span class="ruby-value">:user</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">user</span>, <span class="ruby-value">:pkg</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">package</span>}
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- changepackage-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- changepackage-method -->
+
+    
+      <div id="method-i-cpanel" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cpanel</span><span
+            class="method-args">(user, options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Call cpanel API1 and API2 commands</p>
+
+<p>user (string) The name of the user that owns the cPanel account to be
+affected. xmlin (XML) XML container for the function. Format
+&lt;cpanelaction&gt;&lt;module&gt;&lt;func&gt;&lt;args&gt;&lt;/args&gt;&lt;/func&gt;&lt;/module&gt;&lt;/cpanelaction&gt;
+module (string) Name of the module to access. (See <a
+href="http://www.cpanel.net/plugins/api2/index.html">www.cpanel.net/plugins/api2/index.html</a>
+for module and function names) apiversion (integer) Version of the API to
+access. (1 = API1, no input defaults to API2) func (string) Name of the
+function to access. (See <a
+href="http://www.cpanel.net/plugins/api2/index.html">www.cpanel.net/plugins/api2/index.html</a>
+for module and function names) args (XML or string) List of arguments or
+argument container. See examples for API1 and API2 passing arguments.</p>
+          
+
+          
+          <div class="method-source-code" id="cpanel-source">
+            <pre><span class="ruby-comment"># File lib/panelbeater/whm/commands.rb, line 77</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cpanel</span>(<span class="ruby-identifier">user</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-identifier">default_options</span> = { <span class="ruby-value">:apiversion</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span> }
+  <span class="ruby-identifier">all_options</span> = <span class="ruby-identifier">default_options</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">options</span>).<span class="ruby-identifier">merge!</span>(<span class="ruby-value">:user</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">user</span>)
+  <span class="ruby-identifier">do_request</span> <span class="ruby-string">'cpanel'</span>, <span class="ruby-identifier">all_options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cpanel-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cpanel-method -->
+
+    
+      <div id="method-i-createacct" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">createacct</span><span
+            class="method-args">(options={}, mappings=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create a new account</p>
+
+<p>username (string) User name of the account. Ex: user domain (string) Domain
+name. Ex: domain.tld plan (string) Package to use for account creation. Ex:
+reseller_gold quota (integer) Disk space quota in MB. (0-999999, 0 is
+unlimited) password (string) Password to access cPanel. Ex: p@ss!w0rd$123
+ip (string) Whether or not the domain has a dedicated IP address. (y = Yes,
+n = No) cgi (string) Whether or not the domain has cgi access. (y = Yes, n
+= No) frontpage (string) Whether or not the domain has FrontPage extensions
+installed. (y = Yes, n = No) hasshell (string) Whether or not the domain
+has shell / ssh access. (y = Yes, n = No) contactemail (string) Contact
+email address for the account. Ex: user@otherdomain.tld cpmod (string)
+cPanel theme name. Ex: x3 maxftp (string) Maximum number of FTP accounts
+the user can create. (0-999999 | unlimited, null | 0 is unlimited) maxsql
+(string) Maximum number of SQL databases the user can create. (0-999999 |
+unlimited, null | 0 is unlimited) maxpop (string) Maximum number of email
+accounts the user can create. (0-999999 | unlimited, null | 0 is unlimited)
+maxlst (string) Maximum number of mailing lists the user can create.
+(0-999999 | unlimited, null | 0 is unlimited) maxsub (string) Maximum
+number of subdomains the user can create. (0-999999 | unlimited, null | 0
+is unlimited) maxpark (string) Maximum number of parked domains the user
+can create. (0-999999 | unlimited, null | 0 is unlimited) maxaddon (string)
+Maximum number of addon domains the user can create. (0-999999 | unlimited,
+null | 0 is unlimited) bwlimit (string) Bandiwdth limit in MB. (0-999999, 0
+is unlimited) customip (string) Specific IP address for the site. useregns
+(boolean) Use the registered nameservers for the domain instead of the ones
+configured on the server. (1 = Yes, 0 = No) hasuseregns (boolean) Set to 1
+if you are using the above option. reseller (boolean) Give reseller
+privileges to the account. (1 = Yes, 0 = No)</p>
+          
+
+          
+          <div class="method-source-code" id="createacct-source">
+            <pre><span class="ruby-comment"># File lib/panelbeater/whm/commands.rb, line 132</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">createacct</span>(<span class="ruby-identifier">options</span>={}, <span class="ruby-identifier">mappings</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">default_options</span> = { <span class="ruby-value">:featurelist</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'default'</span>,
+                      <span class="ruby-value">:ip</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'n'</span>,
+                      <span class="ruby-value">:cgi</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'y'</span>,
+                      <span class="ruby-value">:frontpage</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'n'</span>,
+                      <span class="ruby-value">:cpmod</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'x3'</span>,
+                      <span class="ruby-value">:hasshell</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'n'</span>,
+                      <span class="ruby-value">:maxlst</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>,
+                      <span class="ruby-value">:reseller</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span> }
+  <span class="ruby-identifier">all_options</span> = <span class="ruby-identifier">default_options</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">do_request</span> <span class="ruby-string">'createacct'</span>, <span class="ruby-identifier">all_options</span>, <span class="ruby-identifier">mappings</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- createacct-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- createacct-method -->
+
+    
+      <div id="method-i-editpkg" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">editpkg</span><span
+            class="method-args">(name, options={}, mappings=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Edits an existing package</p>
+
+<p>name (string) Name of the package. featurelist (string) Name of the feature
+list to be used for the package. quota (integer) Disk space quota for the
+package (in MB). (max is unlimited) ip (boolean) Whether or not the account
+has a dedicated IP. Yes=1, No=0. cgi (boolean) Whether or not the account
+has cgi access. Yes=1, No=0. frontpage (boolean) Whether or not the account
+can install FrontPage extensions. Yes=1, No=0. cpmod (string) What to
+change the default package them to. Format: cpmod=themename maxftp
+(integer) The maximum amount of FTP accounts a user assigned to the package
+can create. (max is 999) maxsql (integer) The maximum amount of SQL
+databases a user assigned to the package can create. (max is 999) maxpop
+(integer) The maximum amount of email accounts a user assigned to the
+package can create. (max is 999) maxlists (integer) The maximum amount of
+email lists a user assigned to the package can create. (max is 999) maxsub
+(integer) The maximum amount of subdomains a user assigned to the package
+can create. (max is 999) maxpark (integer) The maximum amount of parked
+domains a user assigned to the package can create. (max is 999) maxaddon
+(integer) The maximum amount of addon domains a user assigned to the
+package can create. (max is 999) hasshell (boolean) Whether or not the
+account has shell access. Yes=1, No=0. bwlimit (integer)</p>
+          
+
+          
+          <div class="method-source-code" id="editpkg-source">
+            <pre><span class="ruby-comment"># File lib/panelbeater/whm/commands.rb, line 179</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">editpkg</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">options</span>={}, <span class="ruby-identifier">mappings</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">default_options</span> = { <span class="ruby-value">:featurelist</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'default'</span>,
+                      <span class="ruby-value">:ip</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'n'</span>,
+                      <span class="ruby-value">:cgi</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'y'</span>,
+                      <span class="ruby-value">:frontpage</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'n'</span>,
+                      <span class="ruby-value">:cpmod</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'x3'</span>,
+                      <span class="ruby-value">:hasshell</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'n'</span>,
+                      <span class="ruby-value">:maxlists</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'0'</span> }
+  <span class="ruby-identifier">all_options</span> = <span class="ruby-identifier">default_options</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">options</span>).<span class="ruby-identifier">merge!</span>(<span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">do_request</span> <span class="ruby-string">'editpkg'</span>, <span class="ruby-identifier">all_options</span>, <span class="ruby-identifier">mappings</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- editpkg-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- editpkg-method -->
+
+    
+      <div id="method-i-fetchsslinfo" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fetchsslinfo</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="fetchsslinfo-source">
+            <pre><span class="ruby-comment"># File lib/panelbeater/whm/commands.rb, line 191</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">fetchsslinfo</span>
+    
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- fetchsslinfo-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- fetchsslinfo-method -->
+
+    
+      <div id="method-i-generatessl" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">generatessl</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="generatessl-source">
+            <pre><span class="ruby-comment"># File lib/panelbeater/whm/commands.rb, line 195</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">generatessl</span>
+    
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- generatessl-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- generatessl-method -->
+
+    
+      <div id="method-i-gethostname" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">gethostname</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get the hostname of the server</p>
+          
+
+          
+          <div class="method-source-code" id="gethostname-source">
+            <pre><span class="ruby-comment"># File lib/panelbeater/whm/commands.rb, line 200</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">gethostname</span>
+  <span class="ruby-identifier">do_request</span> <span class="ruby-string">'gethostname'</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- gethostname-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- gethostname-method -->
+
+    
+      <div id="method-i-getlanglist" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getlanglist</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>List of available languages</p>
+          
+
+          
+          <div class="method-source-code" id="getlanglist-source">
+            <pre><span class="ruby-comment"># File lib/panelbeater/whm/commands.rb, line 205</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">getlanglist</span>
+  <span class="ruby-identifier">do_request</span> <span class="ruby-string">'getlanglist'</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getlanglist-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getlanglist-method -->
+
+    
+      <div id="method-i-killpkg" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">killpkg</span><span
+            class="method-args">(package)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Deletes a package from the server</p>
+          
+
+          
+          <div class="method-source-code" id="killpkg-source">
+            <pre><span class="ruby-comment"># File lib/panelbeater/whm/commands.rb, line 210</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">killpkg</span>(<span class="ruby-identifier">package</span>)
+  <span class="ruby-identifier">do_request</span> <span class="ruby-string">'killpkg'</span>, {<span class="ruby-value">:pkg</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">package</span>}
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- killpkg-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- killpkg-method -->
+
+    
+      <div id="method-i-listaccts" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">listaccts</span><span
+            class="method-args">(term = nil, options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Searches for an account</p>
+
+<p>searchtype Type of account search. (domain | owner | user | ip | package )
+search Search criteria. (Perl Regular Expression)</p>
+          
+
+          
+          <div class="method-source-code" id="listaccts-source">
+            <pre><span class="ruby-comment"># File lib/panelbeater/whm/commands.rb, line 221</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">listaccts</span>(<span class="ruby-identifier">term</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">term</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-comment"># Lists all Accounts</span>
+    <span class="ruby-identifier">do_request</span> <span class="ruby-string">'listaccts'</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-comment"># Lists accounts accorning to the search term</span>
+    <span class="ruby-identifier">default_options</span> = {<span class="ruby-value">:searchtype</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'user'</span>}
+    <span class="ruby-identifier">all_options</span> = <span class="ruby-identifier">default_options</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">options</span>).<span class="ruby-identifier">merge!</span>(<span class="ruby-value">:search</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">term</span>)
+    <span class="ruby-identifier">do_request</span> <span class="ruby-string">'listaccts'</span>, <span class="ruby-identifier">all_options</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- listaccts-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- listaccts-method -->
+
+    
+      <div id="method-i-listacls" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">listacls</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Reseller functionality not needed yet</p>
+          
+
+          
+          <div class="method-source-code" id="listacls-source">
+            <pre><span class="ruby-comment"># File lib/panelbeater/whm/commands.rb, line 234</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">listacls</span>
+    
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- listacls-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- listacls-method -->
+
+    
+      <div id="method-i-listcrts" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">listcrts</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="listcrts-source">
+            <pre><span class="ruby-comment"># File lib/panelbeater/whm/commands.rb, line 238</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">listcrts</span>
+    
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- listcrts-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- listcrts-method -->
+
+    
+      <div id="method-i-listpkgs" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">listpkgs</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>List packages on server</p>
+          
+
+          
+          <div class="method-source-code" id="listpkgs-source">
+            <pre><span class="ruby-comment"># File lib/panelbeater/whm/commands.rb, line 243</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">listpkgs</span>
+  <span class="ruby-identifier">do_request</span> <span class="ruby-string">'listpkgs'</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- listpkgs-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- listpkgs-method -->
+
+    
+      <div id="method-i-listresellers" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">listresellers</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Reseller functionality not needed yet</p>
+          
+
+          
+          <div class="method-source-code" id="listresellers-source">
+            <pre><span class="ruby-comment"># File lib/panelbeater/whm/commands.rb, line 248</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">listresellers</span>
+    
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- listresellers-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- listresellers-method -->
+
+    
+      <div id="method-i-listsubdomains" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">listsubdomains</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get list of SubDomains</p>
+          
+
+          
+          <div class="method-source-code" id="listsubdomains-source">
+            <pre><span class="ruby-comment"># File lib/panelbeater/whm/commands.rb, line 339</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">listsubdomains</span>
+  <span class="ruby-identifier">do_request</span> <span class="ruby-string">'listsubdomains'</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- listsubdomains-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- listsubdomains-method -->
+
+    
+      <div id="method-i-listsuspended" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">listsuspended</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>List suspended accounts</p>
+          
+
+          
+          <div class="method-source-code" id="listsuspended-source">
+            <pre><span class="ruby-comment"># File lib/panelbeater/whm/commands.rb, line 253</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">listsuspended</span>
+  <span class="ruby-identifier">do_request</span> <span class="ruby-string">'listsuspended'</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- listsuspended-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- listsuspended-method -->
+
+    
+      <div id="method-i-loadavg" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">loadavg</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get the server load average</p>
+          
+
+          
+          <div class="method-source-code" id="loadavg-source">
+            <pre><span class="ruby-comment"># File lib/panelbeater/whm/commands.rb, line 258</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">loadavg</span>
+  <span class="ruby-identifier">do_request</span> <span class="ruby-string">'loadavg'</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- loadavg-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- loadavg-method -->
+
+    
+      <div id="method-i-passwd" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">passwd</span><span
+            class="method-args">(user, password)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Change and accounts password</p>
+          
+
+          
+          <div class="method-source-code" id="passwd-source">
+            <pre><span class="ruby-comment"># File lib/panelbeater/whm/commands.rb, line 263</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">passwd</span>(<span class="ruby-identifier">user</span>, <span class="ruby-identifier">password</span>)
+  <span class="ruby-identifier">do_request</span> <span class="ruby-string">'passwd'</span>, {<span class="ruby-value">:user</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">user</span>, <span class="ruby-value">:pass</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">password</span>}
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- passwd-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- passwd-method -->
+
+    
+      <div id="method-i-reboot" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">reboot</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Reboot the server, don’t know if this works or if it takes any arguments</p>
+          
+
+          
+          <div class="method-source-code" id="reboot-source">
+            <pre><span class="ruby-comment"># File lib/panelbeater/whm/commands.rb, line 268</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">reboot</span>
+  <span class="ruby-identifier">do_request</span> <span class="ruby-string">'reboot'</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- reboot-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- reboot-method -->
+
+    
+      <div id="method-i-removeacct" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">removeacct</span><span
+            class="method-args">(user, options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Remore and account from the server</p>
+          
+
+          
+          <div class="method-source-code" id="removeacct-source">
+            <pre><span class="ruby-comment"># File lib/panelbeater/whm/commands.rb, line 273</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">removeacct</span>(<span class="ruby-identifier">user</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-identifier">default_options</span> = {<span class="ruby-value">:keepdns</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span>}
+  <span class="ruby-identifier">all_options</span> = <span class="ruby-identifier">default_options</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">options</span>).<span class="ruby-identifier">merge!</span>(<span class="ruby-value">:user</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">user</span>)
+  <span class="ruby-identifier">do_request</span> <span class="ruby-string">'removeacct'</span>, <span class="ruby-identifier">all_options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- removeacct-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- removeacct-method -->
+
+    
+      <div id="method-i-resellerstats" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">resellerstats</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Reseller functionality not needed yet</p>
+          
+
+          
+          <div class="method-source-code" id="resellerstats-source">
+            <pre><span class="ruby-comment"># File lib/panelbeater/whm/commands.rb, line 280</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">resellerstats</span>
+    
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- resellerstats-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- resellerstats-method -->
+
+    
+      <div id="method-i-restartservice" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">restartservice</span><span
+            class="method-args">(service)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Restart a service on the server</p>
+
+<p>service Service to restart (bind | interchange | ftp | httpd | imap | cppop
+| exim | mysql | postgres | ssh | tomcat)</p>
+          
+
+          
+          <div class="method-source-code" id="restartservice-source">
+            <pre><span class="ruby-comment"># File lib/panelbeater/whm/commands.rb, line 289</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">restartservice</span>(<span class="ruby-identifier">service</span>)
+  <span class="ruby-identifier">do_request</span> <span class="ruby-string">'restartservice'</span>, <span class="ruby-value">:service</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">service</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- restartservice-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- restartservice-method -->
+
+    
+      <div id="method-i-saveacllist" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">saveacllist</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Reseller functionality not needed yet</p>
+          
+
+          
+          <div class="method-source-code" id="saveacllist-source">
+            <pre><span class="ruby-comment"># File lib/panelbeater/whm/commands.rb, line 294</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">saveacllist</span>
+    
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- saveacllist-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- saveacllist-method -->
+
+    
+      <div id="method-i-setacls" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">setacls</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Reseller functionality not needed yet</p>
+          
+
+          
+          <div class="method-source-code" id="setacls-source">
+            <pre><span class="ruby-comment"># File lib/panelbeater/whm/commands.rb, line 299</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">setacls</span>
+    
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- setacls-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- setacls-method -->
+
+    
+      <div id="method-i-setupreseller" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">setupreseller</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Reseller functionality not needed yet</p>
+          
+
+          
+          <div class="method-source-code" id="setupreseller-source">
+            <pre><span class="ruby-comment"># File lib/panelbeater/whm/commands.rb, line 304</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">setupreseller</span>
+    
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- setupreseller-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- setupreseller-method -->
+
+    
+      <div id="method-i-showbw" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">showbw</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get bandwidth usage for all users, don’t know if this takes additional
+parameters</p>
+          
+
+          
+          <div class="method-source-code" id="showbw-source">
+            <pre><span class="ruby-comment"># File lib/panelbeater/whm/commands.rb, line 309</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">showbw</span>
+  <span class="ruby-identifier">do_request</span> <span class="ruby-string">'showbw'</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- showbw-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- showbw-method -->
+
+    
+      <div id="method-i-suspendacct" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">suspendacct</span><span
+            class="method-args">(user, reason)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Suspend an account</p>
+          
+
+          
+          <div class="method-source-code" id="suspendacct-source">
+            <pre><span class="ruby-comment"># File lib/panelbeater/whm/commands.rb, line 314</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">suspendacct</span>(<span class="ruby-identifier">user</span>, <span class="ruby-identifier">reason</span>)
+  <span class="ruby-identifier">do_request</span> <span class="ruby-string">'suspendacct'</span>, {<span class="ruby-value">:user</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">user</span>, <span class="ruby-value">:reason</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">reason</span>}
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- suspendacct-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- suspendacct-method -->
+
+    
+      <div id="method-i-terminatereseller" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">terminatereseller</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Reseller functionality not needed yet</p>
+          
+
+          
+          <div class="method-source-code" id="terminatereseller-source">
+            <pre><span class="ruby-comment"># File lib/panelbeater/whm/commands.rb, line 319</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">terminatereseller</span>
+    
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- terminatereseller-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- terminatereseller-method -->
+
+    
+      <div id="method-i-unsetupreseller" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unsetupreseller</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Reseller functionality not needed yet</p>
+          
+
+          
+          <div class="method-source-code" id="unsetupreseller-source">
+            <pre><span class="ruby-comment"># File lib/panelbeater/whm/commands.rb, line 324</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">unsetupreseller</span>
+    
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- unsetupreseller-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- unsetupreseller-method -->
+
+    
+      <div id="method-i-unsuspendacct" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unsuspendacct</span><span
+            class="method-args">(user)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Unsuspend an account</p>
+          
+
+          
+          <div class="method-source-code" id="unsuspendacct-source">
+            <pre><span class="ruby-comment"># File lib/panelbeater/whm/commands.rb, line 329</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">unsuspendacct</span>(<span class="ruby-identifier">user</span>)
+  <span class="ruby-identifier">do_request</span> <span class="ruby-string">'unsuspendacct'</span>, <span class="ruby-value">:user</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">user</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- unsuspendacct-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- unsuspendacct-method -->
+
+    
+      <div id="method-i-version" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">version</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get the of WHM</p>
+          
+
+          
+          <div class="method-source-code" id="version-source">
+            <pre><span class="ruby-comment"># File lib/panelbeater/whm/commands.rb, line 334</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">version</span>
+  <span class="ruby-identifier">do_request</span> <span class="ruby-string">'version'</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- version-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- version-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+
