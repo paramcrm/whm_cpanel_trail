@@ -16,12 +16,12 @@ end
 spec = Gem::Specification.new do |s|
 
   # Change these as appropriate
-  s.name              = "whm_cpanel_trail"
+  s.name              = "panelbeater"
   s.version           = "0.1.6"
   s.summary           = "A gem for communicating with the cPanel and WHM API's"
-  s.author            = "Jamie Dyer"
-  s.email             = "jamie@kernowsoul.com"
-  s.homepage          = "http://kernowsoul.com"
+  s.author            = "Kalpit Patel"
+  s.email             = "krishna.kalpit1@gmail.com"
+  s.homepage          = "https://github.com/paramcrm"
 
   s.has_rdoc          = false
   # You should probably have a README of some kind. Change the filename
