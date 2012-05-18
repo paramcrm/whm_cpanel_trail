@@ -16,7 +16,7 @@ end
 spec = Gem::Specification.new do |s|
 
   # Change these as appropriate
-  s.name              = "panelbeater"
+  s.name              = "whm_cpanel_trail"
   s.version           = "0.1.6"
   s.summary           = "A gem for communicating with the cPanel and WHM API's"
   s.author            = "Jamie Dyer"
